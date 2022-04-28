@@ -34,7 +34,7 @@ def morse_code(user_input):
     """
     try:
         word = user_input.get()
-        if(len(word) > 12):
+        if(len(word) >= 12):
             raise Exception("Message must be 12 characters or less")
         if(word.isalpha() == False):
             raise Exception("Message contains characters outside the alphabet")
