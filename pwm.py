@@ -20,10 +20,12 @@ GPIO.setup(BUZZER, GPIO.OUT)
 GPIO.setup(TRIGGER, False)  # Set to low on start-up
 sleep(2)
 
-"""
-  
-"""
+
 def measure_distance():
+  """
+  Measures the distance from the ultrasonic sensor.
+  :return: A float representing the current distance from the sensor to the nearest object in the sensor field
+  """
     # Time measurements
     start, end = 0, 0
 
@@ -45,6 +47,10 @@ def measure_distance():
 
 
 def sound_buzzer(frequency):
+  """
+  Changes the pitch of the buzzer according to the specified frequency.
+  :param frequency: A float representing the desired pitch for the buzzer
+  """
     buzz.ChangeFrequency(frequency)
 
 
