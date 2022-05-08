@@ -6,7 +6,7 @@ void setup() {
   Serial.begin(9600); // For serial monitoring
   Serial.println("I2C Communication"); 
   Wire.onReceive(printData); // When data is received trigger function
-  Wire.onRequest(echoData); // Send data to master when requested
+  Wire.onRequest(confirmData); // Send data to master when requested
 }
 
 void loop() {
@@ -29,7 +29,7 @@ void printData(int data)
   Serial.println("Message complete");
 }
 
-void echoData()
+void confirmData()
 {
   Wire.write(1); // Confirm communication 
   Serial.println("Confirmation sent");
